@@ -4,7 +4,7 @@ import { fonts } from '../fonts';
 
 export default function Section5(){
   return (
-    <div style={{ backgroundColor: "black", height: "50vh" }}>
+    <div id="section5" className='contactSection'>
       <Container maxWidth="md" style={{
         color: "white",
         justifyContent: "center",
@@ -12,16 +12,16 @@ export default function Section5(){
         display: "flex",
         flexDirection: "column",
         gap: "3rem",
-        padding: "3rem 0"
+        padding: "3rem 2rem"
       }}
         data-aos="zoom-in"
         data-aos-delay="100"
       >
-        <Typography variant="h4" style={{ ...fonts.name, color: "white" }}>
+        <Typography className='text' variant="h4" style={{ ...fonts.name}}>
           Get in Touch
         </Typography>
 
-        <Typography variant="h6" style={{ ...fonts.divesAkuru }}>
+        <Typography className='text' variant="h6" style={{ ...fonts.divesAkuru }}>
            I'm always interested in hearing about new opportunities and collaborations.
           Feel free to reach out through any of the following channels:
         </Typography>

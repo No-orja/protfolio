@@ -13,7 +13,7 @@ export default function Section3() {
   }, []);
 
   return (
-    <div id="section3" style={{ backgroundColor: "black", minHeight: "74vh", padding: "3rem 0", paddingTop: "100px" }}>
+    <div id="section3" className='aboutSection'>
       <Container
         maxWidth="md"
         data-aos="fade-up"
@@ -28,8 +28,8 @@ export default function Section3() {
           marginBottom: "3rem"
         }}
       >
-        <Typography variant="h4" style={{ ...fonts.name, color: "white" }}>About me</Typography>
-        <Typography variant="h6" style={{ ...fonts.divesAkuru }}>
+        <Typography className='text' variant="h4" style={{ ...fonts.name}}>About me</Typography>
+        <Typography className='text' variant="h6" style={{ ...fonts.divesAkuru }}>
           Enthusiastic MERN stack developer and hardworking second-year college student,
           Committed to continuous learning in the ever-evolving field of technology and eager
           to apply my skills in real-world projects.
@@ -42,9 +42,9 @@ export default function Section3() {
         data-aos-delay="200"
         style={{ color: "white", flexDirection: "column", gap: "3rem" }}
       >
-        <Typography variant="h5">Skills:</Typography>
+        <Typography className='text' variant="h5">Skills:</Typography>
 
-        <div style={{ display: "flex", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
+        <div className='text' style={{ display: "flex", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
 
           <div>
             <h4>Languages</h4>
