@@ -5,19 +5,12 @@ import { fonts } from '../fonts';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { useEffect, useState } from 'react';
-import useDarkMode from 'use-dark-mode';
 
-//DarkMode
-// boxShadow: '0 4px 12px rgba(7, 7, 7, 0.36)'
-//Background: backgroundColor: scrolled ? 'rgba(0, 0, 0, 0.64)' : 'transparent'
-
-//LightMode
-// boxShadow: '0 4px 12px rgba(117, 199, 247, 0.38)'
-//Background: backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.64)' : 'transparent'
+import { useTheme } from '../Cotext/ThemeContext';
 
 export default function Section1(){
     const [scrolled, setScrolled] = useState(false);
-    const darkMode = useDarkMode(true);
+    const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,13 +24,19 @@ export default function Section1(){
     <div 
       style={{
         opacity: "0.8",
-        boxShadow: '0 4px 12px rgba(117, 199, 247, 0.38)',
+        boxShadow: theme === 'dark'
+        ? '0 4px 12px rgba(7, 7, 7, 0.36)'
+        : '0 4px 12px rgba(117, 199, 247, 0.38)',
         position: 'fixed',         
         top: 0,
         left: 0,
         right: 0,
         zIndex: 1000,
-        backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.64)' : 'transparent',
+        backgroundColor: scrolled
+        ? theme === 'dark'
+          ? 'rgba(0, 0, 0, 0.64)'
+          : 'rgba(255, 255, 255, 0.64)'
+        : 'transparent',
         transition: 'background-color 0.3s ease',
         backdropFilter: scrolled ? 'blur(4px)' : 'none',
       }}
@@ -58,8 +57,8 @@ export default function Section1(){
           </Stack>
         </Grid>        
         <Grid item>
-          <IconButton className="icon-btn" onClick={darkMode.toggle}>
-            {darkMode.value ? <DarkModeIcon className='icon'/> : <LightModeIcon className='icon'/>}
+          <IconButton className="icon-btn" onClick={toggleTheme}>
+             {theme === 'light' ? <DarkModeIcon className='icon'/> : <LightModeIcon className='icon'/>}
           </IconButton>
         </Grid>
       </Grid>
