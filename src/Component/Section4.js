@@ -9,7 +9,7 @@ export default function Section4() {
       className='projectsSection'
     >
       <Typography
-        className='text'
+        className='TextWithbackgroungDark'
         variant="h3"
         style={{textAlign: "center", marginBottom: "2rem", ...fonts.name }}
       >

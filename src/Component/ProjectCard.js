@@ -19,7 +19,7 @@ export default function ProductCard() {
               </Typography>
                 <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
                 {['React.js', 'BootStrap', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'REST API'].map((tech) => (
-                  <Chip className='text'  key={tech} label={tech} variant="outlined" sx={{borderColor: '#38bdf8', fontSize: '0.75rem' }} />
+                  <Chip className='text'  key={tech} label={tech} variant="outlined" sx={{borderColor: '#1a2e47', fontSize: '0.75rem' }} />
                 ))}
               </Stack>
             </CardContent>
@@ -46,7 +46,7 @@ export default function ProductCard() {
               </Typography>
                 <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
                 {['HTML', 'CSS', 'JavaScript', 'Axios', 'REST API'].map((tech) => (
-                  <Chip key={tech} label={tech} variant="outlined" sx={{  borderColor: '#38bdf8', fontSize: '0.75rem' }} />
+                  <Chip key={tech} label={tech} variant="outlined" sx={{  borderColor: '#1a2e47', fontSize: '0.75rem' }} />
                 ))}
               </Stack>
             </CardContent>
@@ -74,7 +74,7 @@ export default function ProductCard() {
               </Typography>
                 <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
                 {['HTML', 'CSS', 'JS', 'PHP', 'MySQL', 'BootStrap'].map((tech) => (
-                  <Chip key={tech} label={tech} variant="outlined" sx={{  borderColor: '#38bdf8', fontSize: '0.75rem' }} />
+                  <Chip key={tech} label={tech} variant="outlined" sx={{  borderColor: '#1a2e47', fontSize: '0.75rem' }} />
                 ))}
               </Stack>
             </CardContent>
@@ -100,7 +100,7 @@ export default function ProductCard() {
               </Typography>
                 <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
                 {['HTML', 'CSS', 'JS', 'PHP', 'MySQL', 'BootStrap'].map((tech) => (
-                  <Chip key={tech} label={tech} variant="outlined" sx={{  borderColor: '#38bdf8', fontSize: '0.75rem' }} />
+                  <Chip key={tech} label={tech} variant="outlined" sx={{  borderColor: '#1a2e47', fontSize: '0.75rem' }} />
                 ))}
               </Stack>
             </CardContent>
@@ -117,7 +117,7 @@ export default function ProductCard() {
           </Card>
         </Grid>
         <Grid item xs={12} md={6} lg={4} data-aos="zoom-in" data-aos-delay="100">
-          <Card  sx={{ borderRadius: 3, p: 2, boxShadow: 5,  width: "100%", maxWidth: 400}}>
+          <Card className='card'  sx={{ borderRadius: 3, p: 2, boxShadow: 5,  width: "100%", maxWidth: 400}}>
             <CardContent>
               <Typography className='text' variant="h6" gutterBottom>Notes and To-Dos Management Application </Typography>
                 <Typography className='text' variant="body2" sx={{ mb: 2 }}>
@@ -127,7 +127,7 @@ export default function ProductCard() {
               </Typography>
                 <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
                 {['React', 'Redux Toolkit', 'BootStrap', 'Node.js', 'MongoDB', 'Express', 'Axios', 'REST API'].map((tech) => (
-                  <Chip key={tech} label={tech} variant="outlined" sx={{  borderColor: '#38bdf8', fontSize: '0.75rem' }} />
+                  <Chip key={tech} label={tech} variant="outlined" sx={{  borderColor: '#1a2e47', fontSize: '0.75rem' }} />
                 ))}
               </Stack>
             </CardContent>

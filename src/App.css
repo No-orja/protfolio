@@ -39,17 +39,18 @@ html {
 }
 /* Light Colors */
 :root {
-  --background-color: linear-gradient(to bottom, #f0f4f8, #4b86e3); /* خلفية مريحة */
+  --background-color: linear-gradient(to bottom, #638488, #07292d); 
   --background-color-2: #ffffff;
   --background-color-3: linear-gradient(to bottom, #ffffff, #e3ecfb);
-  --background-color-5: #f9fbff;
-  --background-color-card: #ffffff;
-  --icon-color: #1e3a8a; /* كحلي جميل */
-  --text-color: #1e3a8a;
+  --background-color-5: linear-gradient(to bottom, #638488, #07292d);
+  --background-color-card: rgba(255, 255, 255, 0.64);
+  --icon-color: #e0e0e0; 
+  --text-color: #07292d;
+  --text-color-2: #e0e0e0;
 }
 
 [data-theme="dark"] {
-  --background-color: linear-gradient(to bottom, #101926, #1a2e47); /* تدرج داكن أنيق */
+  --background-color: linear-gradient(to bottom, #101926, #1a2e47); 
   --background-color-2: #121212;
   --background-color-3: #1c1c1c;
   --background-color-5: #1e1e2f;
@@ -61,6 +62,9 @@ html {
 
 .text{
   color: var(--text-color);
+}
+.TextWithbackgroungDark{
+  color: var(--text-color-2);
 }
 .icon{
   color: var(--icon-color);
@@ -77,7 +81,7 @@ html {
   padding-top: 100px;
 }
 .projectsSection{
-  background: var(--background-color-3);
+  background: var(--background-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -89,7 +93,7 @@ html {
 
 .contactSection{
   min-height: 40vh;
-  background-color: var(--background-color-5);
+  background-color: var(--background-color);
 }
 .contact-icons {
   display: flex;
@@ -98,7 +102,7 @@ html {
   align-items: center;
 }
 .card{
-  background-color: var(--background-color-card);
+  background-color: var(--background-color-card) !important;
 }
 
 .icon-box {
@@ -115,17 +119,17 @@ html {
 
 .icon-box:hover .icon,
 .icon-box:hover .icon-text {
-  color: #2196f3;
+  color: #89a8ab;
 }
 
 .icon {
   font-size: 40px;
-  /* color: white; */
+  color: #07292d;
   transition: all 0.3s ease-in-out;
 }
 
 .icon-text {
-  /* color: white; */
+  color: #07292d;
   transition: all 0.3s ease-in-out;
 }
 
@@ -136,7 +140,7 @@ html {
 }
 
 .nav-link:hover {
-  color: #2196f3;
+  color: #07292d;
   transform: scale(1.1);
 }
 

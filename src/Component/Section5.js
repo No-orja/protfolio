@@ -17,17 +17,18 @@ export default function Section5(){
         data-aos="zoom-in"
         data-aos-delay="100"
       >
-        <Typography className='text' variant="h4" style={{ ...fonts.name}}>
+        {/* className='TextWithbackgroungDark' */}
+        <Typography  variant="h4" style={{ ...fonts.name, color:"#07292d"}}>
           Get in Touch
         </Typography>
 
-        <Typography className='text' variant="h6" style={{ ...fonts.divesAkuru }}>
+        <Typography  variant="h6" style={{ ...fonts.divesAkuru, color:"#07292d" }}>
            I'm always interested in hearing about new opportunities and collaborations.
           Feel free to reach out through any of the following channels:
         </Typography>
 
         {/*  Social Row */}
-        <div className="contact-icons">
+        <div className="contact-icons" style={{color:"#07292d"}}>
           <div className="icon-box">
             <Email className="icon" />
             <Typography className="icon-text">Email</Typography>
