@@ -4,14 +4,17 @@ import Stack from '@mui/material/Stack';
 import { fonts } from '../fonts';
 import { useEffect, useState } from 'react';
 import PublicIcon from '@mui/icons-material/Public';
+import { useTranslation } from 'react-i18next';
+
 
 export default function Section1(){
-    const [scrolled, setScrolled] = useState(false);
-const [language, setLanguage] = useState('en');
+  const { t, i18n } = useTranslation();
+  const [scrolled, setScrolled] = useState(false);
 
 const toggleLanguage = () => {
-  const newLang = language === 'en' ? 'ar' : 'en';
-  setLanguage(newLang);
+  const newLang = i18n.language === 'en' ? 'ar' : 'en';
+  i18n.changeLanguage(newLang);
+  document.dir = newLang === 'ar' ? 'rtl' : 'ltr';
 };
 
   useEffect(() => {
@@ -42,13 +45,20 @@ const toggleLanguage = () => {
     >
       <Grid container alignItems="center" justifyContent="space-between" style={{ padding: "1rem 4rem" }}>
         <Grid item>
-          <Stack direction="row" spacing={4}>
+          <Stack direction={i18n.language === 'ar' ? 'row-reverse' : 'row'}  spacing={4}>
           <a href="#section3" style={{ textDecoration: "none" }}>
-            <Typography 
-              variant="h6" 
-              // className="nav-link" 
-              style={{ ...fonts.heading, cursor: "pointer", fontWeight: 'bold', color: scrolled ? '#07292d' : '#e0e0e0' }}
-            > About
+            <Typography
+              variant="h6"
+              style={{
+                ...fonts.heading,
+                cursor: "pointer",
+                fontWeight: 'bold',
+                color: scrolled ? '#07292d' : '#e0e0e0',
+                minWidth: '80px',        
+                textAlign: 'center'      
+              }}
+            >
+              {t('nav.about')}
             </Typography>
           </a>
           <a href="#section4" style={{ textDecoration: "none" }}>
@@ -56,7 +66,7 @@ const toggleLanguage = () => {
               variant="h6" 
               // className="nav-link" 
               style={{ ...fonts.heading, cursor: "pointer" , fontWeight: 'bold', color: scrolled ? '#07292d' : '#e0e0e0' }}
-              >Projects
+              >{t('nav.projects')}
             </Typography>            
           </a>
           <a href="#section5" style={{ textDecoration: "none" }}>
@@ -64,24 +74,23 @@ const toggleLanguage = () => {
               variant="h6" 
               // className="nav-link" 
               style={{ ...fonts.heading, cursor: "pointer", fontWeight: 'bold', color: scrolled ? '#07292d' : '#e0e0e0'  }}
-              > Contact
+              > {t('nav.contact')}
             </Typography>
           </a>
           </Stack>
         </Grid>        
-        <Grid item>
+        <Grid item >
           <Button 
             onClick={toggleLanguage} 
-            startIcon={<PublicIcon style={{ color: scrolled ? '#07292d' : '#e0e0e0' }} />} 
+            startIcon={<PublicIcon style={{ color: scrolled ? '#07292d' : '#e0e0e0', paddingLeft:'8px', paddingRight:'8px'}} />} 
             style={{ 
               color: scrolled ? '#07292d' : '#e0e0e0', 
               fontWeight: 'bold', 
               fontFamily: fonts.heading.fontFamily 
             }}
           >
-            {language === 'en' ? 'Arabic' : 'الانجليزية'}
+            {t('nav.language')}
           </Button>
-
         </Grid>
       </Grid>
     </div>

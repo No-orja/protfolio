@@ -5,9 +5,9 @@ import Section3 from "./Component/Section3"
 import Section5 from "./Component/Section5"
 import Section4 from "./Component/Section4"
 import { ThemeProvider } from './Cotext/ThemeContext';
+
 function App() {
   return (
-    
     <div className="App">
        <ThemeProvider>
         <Section1/>

@@ -15,4 +15,9 @@ export const fonts = {
     fontFamily: "'Noto Serif Dives Akuru', serif", 
     fontWeight: 400,
   },
+  // Arabic
+  arabicName:{
+    fontFamily:"'Lateef', sans-serif",
+    fontWeight: 500, 
+  }
 };

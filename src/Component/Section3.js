@@ -3,8 +3,15 @@ import { fonts } from '../fonts';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useTranslation } from 'react-i18next';
 
 export default function Section3() {
+  const { t, i18n } = useTranslation();
+
+  const isArabic = i18n.language === 'ar';
+  const headingFont = isArabic ? fonts.arabicName : fonts.name;
+  const bodyFont = isArabic ? fonts.arabicBody : fonts.divesAkuru;
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -25,14 +32,16 @@ export default function Section3() {
           display: "flex",
           flexDirection: "column",
           gap: "3rem",
-          marginBottom: "3rem"
+          marginBottom: "3rem",
+          textAlign: isArabic ? 'right' : 'left'
         }}
       >
-        <Typography className='text' variant="h4" style={{ ...fonts.name}}>About me</Typography>
-        <Typography className='text' variant="h6" style={{ ...fonts.divesAkuru }}>
-          Enthusiastic MERN stack developer and hardworking second-year college student,
-          Committed to continuous learning in the ever-evolving field of technology and eager
-          to apply my skills in real-world projects.
+        <Typography className='text' variant="h4" style={{ ...headingFont }}>
+          {t('aboutMeTitle')}
+        </Typography>
+
+        <Typography className='text' variant="h6" style={{ ...bodyFont }}>
+          {t('aboutMeText')}
         </Typography>
       </Container>
 
@@ -40,9 +49,9 @@ export default function Section3() {
         maxWidth="md"
         data-aos="fade-up"
         data-aos-delay="200"
-        style={{ color: "white", flexDirection: "column", gap: "3rem" }}
+        style={{ color: "white", flexDirection: "column", gap: "3rem", textAlign: isArabic ? 'right' : 'left' }}
       >
-        <Typography className='text' variant="h5">Skills:</Typography>
+        <Typography className='text' variant="h5">{t('skills')}</Typography>
 
         <div className='text' style={{ display: "flex", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
 

@@ -1,46 +1,56 @@
 import { Container, Typography } from '@mui/material';
-import { Email, LinkedIn, GitHub } from '@mui/icons-material'; 
+import { Email, LinkedIn, GitHub } from '@mui/icons-material';
 import { fonts } from '../fonts';
+import { useTranslation } from 'react-i18next';
 
-export default function Section5(){
+export default function Section5() {
+  const { t, i18n } = useTranslation();
+
+  const isArabic = i18n.language === 'ar';
+  const headingFont = isArabic ? fonts.arabicName : fonts.name;
+  const bodyFont = isArabic ? fonts.arabicBody : fonts.divesAkuru;
+
   return (
     <div id="section5" className='contactSection'>
-      <Container maxWidth="md" style={{
-        color: "white",
-        justifyContent: "center",
-        alignItems: "center",
-        display: "flex",
-        flexDirection: "column",
-        gap: "3rem",
-        padding: "3rem 2rem"
-      }}
+      <Container
+        maxWidth="md"
+        style={{
+          color: "#07292d",
+          justifyContent: "center",
+          alignItems: "center",
+          display: "flex",
+          flexDirection: "column",
+          gap: "3rem",
+          padding: "3rem 2rem",
+          textAlign: isArabic ? 'right' : 'left'
+        }}
         data-aos="zoom-in"
         data-aos-delay="100"
       >
-        {/* className='TextWithbackgroungDark' */}
-        <Typography  variant="h4" style={{ ...fonts.name, color:"#07292d"}}>
-          Get in Touch
+        <Typography variant="h4" style={{ ...headingFont }}>
+          {t('contactTitle')}
         </Typography>
 
-        <Typography  variant="h6" style={{ ...fonts.divesAkuru, color:"#07292d" }}>
-           I'm always interested in hearing about new opportunities and collaborations.
-          Feel free to reach out through any of the following channels:
+        <Typography variant="h6" style={{ ...bodyFont }}>
+          {t('contactDescription')}
         </Typography>
 
-        {/*  Social Row */}
-        <div className="contact-icons" style={{color:"#07292d"}}>
-          <div className="icon-box">
+        <div className="contact-icons" style={{ color: "#07292d", display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
+          <div className="icon-box" style={{ textAlign: 'center' }}>
             <Email className="icon" />
-            <Typography className="icon-text">Email</Typography>
+            <Typography className="icon-text">{t('contact.email')}</Typography>
           </div>
-          <div className="icon-box">
+          <div className="icon-box" style={{ textAlign: 'center' }}>
             <LinkedIn className="icon" />
-            <Typography className="icon-text">LinkedIn</Typography>
+            <Typography className="icon-text">{t('contact.linkedin')}</Typography>
           </div>
-          <div className="icon-box">
-            <GitHub className="icon" />
-            <Typography className="icon-text">GitHub</Typography>
-          </div>
+          <a href="https://github.com/No-orja" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div className="icon-box" style={{ textAlign: 'center', cursor: 'pointer' }}>
+              <GitHub className="icon" />
+              <Typography className="icon-text">{t('contact.github')}</Typography>
+            </div>
+          </a>
+
         </div>
       </Container>
     </div>

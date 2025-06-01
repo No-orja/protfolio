@@ -1,143 +1,161 @@
-import { Button, Card, CardActions, CardContent, Chip, Grid, Stack, Typography } from '@mui/material';
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Chip,
+  Grid,
+  Stack,
+  Typography
+} from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LanguageIcon from '@mui/icons-material/Language';
+import { useTranslation } from 'react-i18next';
+import { fonts } from '../fonts';
 
 export default function ProductCard() {
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === 'ar';
+  const titleFont = isArabic ? fonts.arabicName : fonts.name;
+  const descFont = isArabic ? fonts.arabicBody : fonts.divesAkuru;
+
   return (
     <div style={{ padding: '2rem 0' }}>
-      <Grid container spacing={3}  justifyContent="center">
+      <Grid container spacing={3} justifyContent="center">
         <Grid item xs={12} md={6} lg={4} data-aos="zoom-in" data-aos-delay="100">
-          <Card className='card' sx={{borderRadius: 3, p: 2, boxShadow: 5,  width: "100%", maxWidth: 400 }}>
+          <Card className='card' sx={{ borderRadius: 3, p: 2, boxShadow: 5, width: "100%", maxWidth: 400 }}>
             <CardContent>
-              <Typography className='text' variant="h6" gutterBottom>E-Commerce Web Application (MERN Stack):</Typography>
-                <Typography className='text' variant="body2" sx={{ mb: 2 }}>
-                    Built a full-featured e-commerce platform with user authentication, 
-                    product browsing, shopping cart, and order management functionalities. 
-                    Implemented a responsive frontend using React and Bootstrap, connected to a RESTful backend API built with Node.js and Express, 
-                    with MongoDB used for data storage. 
-                    Integrated admin dashboard for managing products, orders, and users, with role-based access control.
+              <Typography className='text' variant="h6" gutterBottom style={titleFont}>
+                {t('projects.ecommerce.title')}
               </Typography>
-                <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
+              <Typography className='text' variant="body2" sx={{ mb: 2 }} style={descFont}>
+                {t('projects.ecommerce.desc')}
+              </Typography>
+              <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
                 {['React.js', 'BootStrap', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'REST API'].map((tech) => (
-                  <Chip className='text'  key={tech} label={tech} variant="outlined" sx={{borderColor: '#1a2e47', fontSize: '0.75rem' }} />
+                  <Chip className='text' key={tech} label={tech} variant="outlined" sx={{ borderColor: '#1a2e47', fontSize: '0.75rem' }} />
                 ))}
               </Stack>
             </CardContent>
             <CardActions>
-                <Stack direction="row" spacing={2}>
-                <Button variant="outlined" startIcon={<GitHubIcon />} sx={{   textTransform: 'none' }}>
-                  View on GitHub
+              <Stack direction="row" spacing={2}>
+                <Button variant="outlined" startIcon={<GitHubIcon />} sx={{ textTransform: 'none' }}>
+                  {t('projects.buttons.github')}
                 </Button>
-                <Button variant="outlined" startIcon={<LanguageIcon />} sx={{   textTransform: 'none' }}>
-                  Visit Website
+                <Button variant="outlined" startIcon={<LanguageIcon />} sx={{ textTransform: 'none' }}>
+                  {t('projects.buttons.website')}
                 </Button>
               </Stack>
             </CardActions>
           </Card>
         </Grid>
+
         <Grid item xs={12} md={6} lg={4} data-aos="zoom-in" data-aos-delay="100">
-          <Card className='card' sx={{borderRadius: 3, p: 2, boxShadow: 5,  width: "100%", maxWidth: 400  }}>
+          <Card className='card' sx={{ borderRadius: 3, p: 2, boxShadow: 5, width: "100%", maxWidth: 400 }}>
             <CardContent>
-              <Typography className='text' variant="h6" gutterBottom>Social media app:</Typography>
-                <Typography className='text' variant="body2" sx={{ mb: 2 }}>
-                    Developed a dynamic social media interface using pure JavaScript and HTML, consuming external APIs 
-                    to enable user login/logout, post creation, editing, deletion, and infinite 
-                    scrolling. Ensured seamless navigation and profile management across multiple pages.  
+              <Typography className='text' variant="h6" gutterBottom style={titleFont}>
+                {t('projects.social.title')}
               </Typography>
-                <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
+              <Typography className='text' variant="body2" sx={{ mb: 2 }} style={descFont}>
+                {t('projects.social.desc')}
+              </Typography>
+              <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
                 {['HTML', 'CSS', 'JavaScript', 'Axios', 'REST API'].map((tech) => (
-                  <Chip key={tech} label={tech} variant="outlined" sx={{  borderColor: '#1a2e47', fontSize: '0.75rem' }} />
+                  <Chip key={tech} label={tech} variant="outlined" sx={{ borderColor: '#1a2e47', fontSize: '0.75rem' }} />
                 ))}
               </Stack>
             </CardContent>
             <CardActions>
-                <Stack direction="row" spacing={2}>
-                <Button variant="outlined" startIcon={<GitHubIcon />} sx={{   textTransform: 'none' }}>
-                  View on GitHub
+              <Stack direction="row" spacing={2}>
+                <Button variant="outlined" startIcon={<GitHubIcon />} sx={{ textTransform: 'none' }}>
+                  {t('projects.buttons.github')}
                 </Button>
-                <Button variant="outlined" startIcon={<LanguageIcon />} sx={{   textTransform: 'none' }}>
-                  Visit Website
+                <Button variant="outlined" startIcon={<LanguageIcon />} sx={{ textTransform: 'none' }}>
+                  {t('projects.buttons.website')}
                 </Button>
               </Stack>
             </CardActions>
           </Card>
         </Grid>
+
         <Grid item xs={12} md={6} lg={4} data-aos="zoom-in" data-aos-delay="100">
-          <Card className='card' sx={{borderRadius: 3, p: 2, boxShadow: 5,  width: "100%", maxWidth: 400}}>
+          <Card className='card' sx={{ borderRadius: 3, p: 2, boxShadow: 5, width: "100%", maxWidth: 400 }}>
             <CardContent>
-              <Typography className='text' variant="h6" gutterBottom>Movie-App</Typography>
-                <Typography className='text' variant="body2" sx={{ mb: 2 }}>
-                Built a movie web app using HTML, CSS, and JavaScript. 
-                Integrated TMDB API to display a list of movies with infinite scroll. 
-                Added a details page that shows movie info like title, poster, description, 
-                release date, and rating. Used Axios for API calls and handled data dynamically based on URL parameters.
+              <Typography className='text' variant="h6" gutterBottom style={titleFont}>
+                {t('projects.movie.title')}
               </Typography>
-                <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
+              <Typography className='text' variant="body2" sx={{ mb: 2 }} style={descFont}>
+                {t('projects.movie.desc')}
+              </Typography>
+              <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
                 {['HTML', 'CSS', 'JS', 'PHP', 'MySQL', 'BootStrap'].map((tech) => (
-                  <Chip key={tech} label={tech} variant="outlined" sx={{  borderColor: '#1a2e47', fontSize: '0.75rem' }} />
+                  <Chip key={tech} label={tech} variant="outlined" sx={{ borderColor: '#1a2e47', fontSize: '0.75rem' }} />
                 ))}
               </Stack>
             </CardContent>
             <CardActions>
-                <Stack direction="row" spacing={2}>
-                <Button variant="outlined" startIcon={<GitHubIcon />} sx={{   textTransform: 'none' }}>
-                  View on GitHub
+              <Stack direction="row" spacing={2}>
+                <Button variant="outlined" startIcon={<GitHubIcon />} sx={{ textTransform: 'none' }}>
+                  {t('projects.buttons.github')}
                 </Button>
-                <Button variant="outlined" startIcon={<LanguageIcon />} sx={{   textTransform: 'none' }}>
-                  Visit Website
+                <Button variant="outlined" startIcon={<LanguageIcon />} sx={{ textTransform: 'none' }}>
+                  {t('projects.buttons.website')}
                 </Button>
               </Stack>
             </CardActions>
           </Card>
         </Grid>
+
         <Grid item xs={12} md={6} lg={4} data-aos="zoom-in" data-aos-delay="100">
-          <Card className='card' sx={{ borderRadius: 3, p: 2, boxShadow: 5,  width: "100%", maxWidth: 400}}>
+          <Card className='card' sx={{ borderRadius: 3, p: 2, boxShadow: 5, width: "100%", maxWidth: 400 }}>
             <CardContent>
-              <Typography className='text' variant="h6" gutterBottom>Weather-App</Typography>
-                <Typography className='text' variant="body2" sx={{ mb: 2 }}>
-                Developed a weather application using React, featuring real-time weather updates, responsive design, and multilingual support (English/Arabic) via i18next.
-                Integrated external weather APIs to fetch and display data using reusable components. Employed clean component structure.
+              <Typography className='text' variant="h6" gutterBottom style={titleFont}>
+                {t('projects.weather.title')}
               </Typography>
-                <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
+              <Typography className='text' variant="body2" sx={{ mb: 2 }} style={descFont}>
+                {t('projects.weather.desc')}
+              </Typography>
+              <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
                 {['HTML', 'CSS', 'JS', 'PHP', 'MySQL', 'BootStrap'].map((tech) => (
-                  <Chip key={tech} label={tech} variant="outlined" sx={{  borderColor: '#1a2e47', fontSize: '0.75rem' }} />
+                  <Chip key={tech} label={tech} variant="outlined" sx={{ borderColor: '#1a2e47', fontSize: '0.75rem' }} />
                 ))}
               </Stack>
             </CardContent>
             <CardActions>
-                <Stack direction="row" spacing={2}>
-                <Button variant="outlined" startIcon={<GitHubIcon />} sx={{   textTransform: 'none' }}>
-                  View on GitHub
+              <Stack direction="row" spacing={2}>
+                <Button variant="outlined" startIcon={<GitHubIcon />} sx={{ textTransform: 'none' }}>
+                  {t('projects.buttons.github')}
                 </Button>
-                <Button variant="outlined" startIcon={<LanguageIcon />} sx={{   textTransform: 'none' }}>
-                  Visit Website
+                <Button variant="outlined" startIcon={<LanguageIcon />} sx={{ textTransform: 'none' }}>
+                  {t('projects.buttons.website')}
                 </Button>
               </Stack>
             </CardActions>
           </Card>
         </Grid>
+
         <Grid item xs={12} md={6} lg={4} data-aos="zoom-in" data-aos-delay="100">
-          <Card className='card'  sx={{ borderRadius: 3, p: 2, boxShadow: 5,  width: "100%", maxWidth: 400}}>
+          <Card className='card' sx={{ borderRadius: 3, p: 2, boxShadow: 5, width: "100%", maxWidth: 400 }}>
             <CardContent>
-              <Typography className='text' variant="h6" gutterBottom>Notes and To-Dos Management Application </Typography>
-                <Typography className='text' variant="body2" sx={{ mb: 2 }}>
-                    A full-stack notes management web application that allows users to create, edit, 
-                    delete notes and todos. The system responsive design, and real-time data updates. 
-                    Developed with a focus on simplicity, performance, and scalability to deliver an intuitive user experience.
+              <Typography className='text' variant="h6" gutterBottom style={titleFont}>
+                {t('projects.notes.title')}
               </Typography>
-                <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
+              <Typography className='text' variant="body2" sx={{ mb: 2 }} style={descFont}>
+                {t('projects.notes.desc')}
+              </Typography>
+              <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
                 {['React', 'Redux Toolkit', 'BootStrap', 'Node.js', 'MongoDB', 'Express', 'Axios', 'REST API'].map((tech) => (
-                  <Chip key={tech} label={tech} variant="outlined" sx={{  borderColor: '#1a2e47', fontSize: '0.75rem' }} />
+                  <Chip key={tech} label={tech} variant="outlined" sx={{ borderColor: '#1a2e47', fontSize: '0.75rem' }} />
                 ))}
               </Stack>
             </CardContent>
             <CardActions>
-                <Stack direction="row" spacing={2}>
-                <Button variant="outlined" startIcon={<GitHubIcon />} sx={{   textTransform: 'none' }}>
-                  View on GitHub
+              <Stack direction="row" spacing={2}>
+                <Button variant="outlined" startIcon={<GitHubIcon />} sx={{ textTransform: 'none' }}>
+                  {t('projects.buttons.github')}
                 </Button>
-                <Button variant="outlined" startIcon={<LanguageIcon />} sx={{   textTransform: 'none' }}>
-                  Visit Website
+                <Button variant="outlined" startIcon={<LanguageIcon />} sx={{ textTransform: 'none' }}>
+                  {t('projects.buttons.website')}
                 </Button>
               </Stack>
             </CardActions>
