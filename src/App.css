@@ -49,17 +49,6 @@ html {
   --text-color-2: #e0e0e0;
 }
 
-[data-theme="dark"] {
-  --background-color: linear-gradient(to bottom, #101926, #1a2e47); 
-  --background-color-2: #121212;
-  --background-color-3: #1c1c1c;
-  --background-color-5: #1e1e2f;
-  --background-color-card: #202a3c;
-  --icon-color: #e0e0e0;
-  --text-color: #e0e0e0;
-}
-
-
 .text{
   color: var(--text-color);
 }
